@@ -349,7 +349,7 @@ func (u *URI) parse(host, uri []byte, isTLS bool) error {
 
 	// fragmentIndex >= 0 && queryIndex < 0
 	// Path is up to the start of fragment
-	u.pathOriginal = append(u.pathOriginal, b[:fragmentIndex]...)
+	u.pathOriginal = append(u.pathOriginal, b...)
 	u.path = normalizePath(u.path, u.pathOriginal)
 	u.hash = append(u.hash, b[fragmentIndex+1:]...)
 
